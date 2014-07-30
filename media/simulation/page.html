@@ -1,0 +1,35 @@
+<h1>On simulating nature</h1>
+<p>We would like to simulate events in a virtual world.
+Our world has time and three cell species (A, B, C).</p>
+<div class="center">
+    <canvas id="simbackground" resize></canvas>
+    <canvas id="sim" resize></canvas>
+</div>
+
+<p>We can find statistically measure mean time between two event of the same kind.</p>
+<p>In our world we have two kind of events: a cell born and a cell die.</p>
+<p>Our measured mean values are:
+Every 5 seconds a new cell of type A is born.
+Every 30 seconds a cell of type A dies.
+Every 15 seconds a new cell of type B is born.
+Every 15 seconds a cell of type B dies.
+Every 30 seconds a new cell of type C is born.
+Every 45 seconds a cell of type C dies.</p>
+<p>We consider that the birth of a cell is an event that occur continuously (i.e.
+we do not consider things like seasons.) and independently (i.e. the birth of
+one cell do not affect the birth of another cell.) at a constant average rate.</p>
+<p>This birth process of our cell is called a Poisson process and use and
+exponential distribution to describe the time between two event (two cell
+birth).</p>
+<p>We are going to use an homogenous type of Poisson process (the parameter lambda is fixed).</p>
+<p>The parameter lambda is called the rate parameter and describe the the expected number of events that occur per
+unit of time.</p>
+<p>Lambda its equal to 1 devided by the desired mean.</p>
+<p>Programmatically we could use a timer or incorporate that in the main loop of the game.</p>
+<p>Increasing lambda will diminish the likelyhood of a manifestation
+of an event.</p>
+<p>Readings:</p>
+<ul>
+<li>This article is loosely inspired by this</li>
+<li>Aaaa</li>
+</ul>

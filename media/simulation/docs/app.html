@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>app.js</title>
+  <link rel="stylesheet" href="pocco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>app.js</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-0'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-0">#</a>
+        </div>
+        <p>fhoehl.com</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre></pre></div></pre></div>
+      </td>
+    </tr>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        <p>Random module with an expovariate function.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="nx">Random</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">Random</span><span class="p">.</span><span class="nx">expovariate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">lambda</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()))</span> <span class="o">/</span> <span class="nx">lambda</span><span class="p">;</span>
+<span class="p">}</span></pre></div></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p>Given a cell to draw, a lambda parameter, a born rate and death rate
+the function will set </p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="kd">var</span> <span class="nx">makeCellProcess</span>  <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cellSymbol</span><span class="p">,</span> <span class="nx">bornRate</span><span class="p">,</span> <span class="nx">deathRate</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">start</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">timeToNextBirth</span> <span class="o">=</span> <span class="nx">Random</span><span class="p">.</span><span class="nx">expovariate</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="nx">bornRate</span><span class="p">),</span>
+                <span class="nx">timeToLive</span> <span class="o">=</span> <span class="nx">Random</span><span class="p">.</span><span class="nx">expovariate</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="nx">deathRate</span><span class="p">),</span>
+                <span class="nx">cell</span> <span class="o">=</span> <span class="nx">Grid</span><span class="p">.</span><span class="nx">placeCell</span><span class="p">(</span><span class="nx">cellSymbol</span><span class="p">);</span>
+
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">end</span><span class="p">(</span><span class="nx">cell</span><span class="p">),</span> <span class="nx">timeToLive</span><span class="p">);</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">start</span><span class="p">(),</span> <span class="nx">timeToNextBirth</span><span class="p">);</span>
+        <span class="p">};</span>
+    <span class="p">};</span>
+
+    <span class="kd">var</span> <span class="nx">end</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cell</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">cell</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+        <span class="p">};</span>
+    <span class="p">};</span></pre></div></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p>Calling start to initialize the process.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre>    <span class="nx">start</span><span class="p">()();</span>
+<span class="p">};</span></pre></div></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p>Maintains the grid display of the cells.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">cellSize</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+    
+    <span class="nx">update</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">maxWidth</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">maxHeight</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">horizontalNumberOfCell</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxWidth</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">cellSize</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">horizontalNumberOfCellError</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">maxWidth</span> <span class="o">%</span> <span class="k">this</span><span class="p">.</span><span class="nx">cellSize</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">verticalNumberOfCell</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxHeight</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">cellSize</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">verticalNumberOfCellError</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">maxHeight</span> <span class="o">%</span> <span class="k">this</span><span class="p">.</span><span class="nx">cellSize</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">cellSizeW</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cellSize</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">horizontalNumberOfCellError</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">horizontalNumberOfCell</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">cellSizeH</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cellSize</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">verticalNumberOfCellError</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">verticalNumberOfCell</span><span class="p">;</span>
+    <span class="p">},</span>
+
+    <span class="nx">placeCell</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cellSymbol</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Grid</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">Grid</span><span class="p">.</span><span class="nx">horizontalNumberOfCell</span><span class="p">)</span> <span class="o">*</span> <span class="nx">Grid</span><span class="p">.</span><span class="nx">cellSizeW</span> <span class="o">+</span> <span class="nx">Grid</span><span class="p">.</span><span class="nx">cellSizeW</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nx">y</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">Grid</span><span class="p">.</span><span class="nx">verticalNumberOfCell</span><span class="p">)</span> <span class="o">*</span> <span class="nx">Grid</span><span class="p">.</span><span class="nx">cellSizeH</span> <span class="o">+</span> <span class="nx">Grid</span><span class="p">.</span><span class="nx">cellSizeH</span> <span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+        
+        <span class="k">return</span> <span class="nx">cellSymbol</span><span class="p">.</span><span class="nx">place</span><span class="p">([</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">};</span></pre></div></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p>Setting the canvas used to draw the simulation.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;sim&quot;</span><span class="p">);</span>
+<span class="nx">paper</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="nx">canvas</span><span class="p">);</span></pre></div></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p>Creating the graphic representation of the cells.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="kd">var</span> <span class="nx">cellA</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">paper</span><span class="p">.</span><span class="nx">Path</span><span class="p">.</span><span class="nx">Rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">30</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cellASymbol</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">paper</span><span class="p">.</span><span class="nx">Symbol</span><span class="p">(</span><span class="nx">cellA</span><span class="p">);</span>
+<span class="nx">cellA</span><span class="p">.</span><span class="nx">fillColor</span> <span class="o">=</span> <span class="s2">&quot;#000000&quot;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">cellB</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">paper</span><span class="p">.</span><span class="nx">Path</span><span class="p">.</span><span class="nx">Rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">30</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cellBSymbol</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">paper</span><span class="p">.</span><span class="nx">Symbol</span><span class="p">(</span><span class="nx">cellB</span><span class="p">);</span>
+<span class="nx">cellB</span><span class="p">.</span><span class="nx">fillColor</span> <span class="o">=</span> <span class="s2">&quot;#555555&quot;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">cellC</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">paper</span><span class="p">.</span><span class="nx">Path</span><span class="p">.</span><span class="nx">Rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">30</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cellCSymbol</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">paper</span><span class="p">.</span><span class="nx">Symbol</span><span class="p">(</span><span class="nx">cellC</span><span class="p">);</span>
+<span class="nx">cellC</span><span class="p">.</span><span class="nx">fillColor</span> <span class="o">=</span> <span class="s2">&quot;#aaaaaa&quot;</span><span class="p">;</span></pre></div></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        <p>Setting the animation loop.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="kd">var</span> <span class="nx">onFrameHandler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">paper</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">draw</span><span class="p">();</span>
+<span class="p">};</span>
+<span class="nx">paper</span><span class="p">.</span><span class="nx">project</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">onFrame</span> <span class="o">=</span> <span class="nx">onFrameHandler</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span></pre></div></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p>Initializing cells process.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><div class="highlight"><pre><span class="nx">makeCellProcess</span><span class="p">(</span><span class="nx">cellASymbol</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">15000</span><span class="p">);</span>
+<span class="nx">makeCellProcess</span><span class="p">(</span><span class="nx">cellBSymbol</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">);</span>
+<span class="nx">makeCellProcess</span><span class="p">(</span><span class="nx">cellCSymbol</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">);</span>
+
+</pre></div></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

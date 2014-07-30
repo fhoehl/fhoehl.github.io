@@ -1,0 +1,21 @@
+html {
+}
+
+body {
+    color:#211922;
+}
+
+.center {
+    position: relative;
+    display: block;
+}
+
+#simbackground {
+    position: absolute;
+    display: inline-block;
+}
+
+#sim {
+    position: absolute;
+    display: inline-block;
+}
