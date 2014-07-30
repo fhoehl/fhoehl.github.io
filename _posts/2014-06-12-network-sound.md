@@ -4,12 +4,6 @@ title: Internals of Digital Useless Machine I
 image: /images/graph.png
 ---
 
----
-layout: post
-title: Internals of Digital Useless Machine I
-image: /images/graph.png
----
-
 # About
 
 This machine is a system with rules and an organization. One can play the machine by poking it and seeing how it responds. Like many machines it will generate sound. A sound that will be altered by how you interact with it. It is similar to any musical instrument but instead of it being made out of wood or metal it is made from describing to a computer, by programming, what you have in mind. Also like any instrument, this machine has its own aesthetic. The coating and wood finish on a guitar is similar to the shaders, the colours and the representation that I choose for this machine.
