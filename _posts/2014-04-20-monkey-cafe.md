@@ -11,9 +11,9 @@ Monkeys took over _The Things We Love_; a coffee & bike shop in Dalston.
 
 <div class="container">
   <div class="clearfix mxn2">
-    <div class="col col-12 px4">
-      <img src="/images/monkey_table_1.jpg" class="block mb3" />
-      <img src="/images/monkey_table_2.jpg" class="block mb3" />
+    <div class="col col-12 px2">
+      <img src="/images/monkey_table_1.jpg" class="mb2"/>
+      <img src="/images/monkey_table_2.jpg" class="mb2" />
     </div>
   </div>
 </div>
@@ -23,13 +23,13 @@ Monkeys took over _The Things We Love_; a coffee & bike shop in Dalston.
 
 <div class="container">
   <div class="clearfix mxn2">
-    <div class="col col-6 px2">
-      <img src="/images/monkey_tipbox_1.jpg" class="p2" />
-      <img src="/images/monkey_tipbox_3.jpg" class="p2" />
-      <img src="/images/monkey_tipbox_4.jpg" class="p2" />
+    <div class="col sm-col-12 md-col-6 px2">
+      <img src="/images/monkey_tipbox_1.jpg" class="mb2" />
+      <img src="/images/monkey_tipbox_3.jpg" class="mb2" />
+      <img src="/images/monkey_tipbox_4.jpg" class="mb2" />
     </div>
-    <div class="col col-6 px2">
-      <img src="/images/monkey_tipbox_2.jpg" class="p2" />
+    <div class="col sm-col-12 md-col-6 px2">
+      <img src="/images/monkey_tipbox_2.jpg" class="mb2" />
     </div>
   </div>
 </div>
@@ -41,16 +41,16 @@ Monkeys took over _The Things We Love_; a coffee & bike shop in Dalston.
 
 <div class="container">
   <div class="clearfix mxn2">
-    <div class="col col-6 px2">
-      <img src="/images/monkey_artbox_1.jpg" class="p2" />
-      <img src="/images/monkey_artbox_2.jpg" class="p2" />
-      <img src="/images/monkey_artbox_7.jpg" class="p2" />
+    <div class="col sm-col-12 md-col-6 px2">
+      <img src="/images/monkey_artbox_1.jpg" class="mb2" />
+      <img src="/images/monkey_artbox_2.jpg" class="mb2" />
+      <img src="/images/monkey_artbox_7.jpg" class="mb2" />
     </div>
-    <div class="col col-6 px2">
-      <img src="/images/monkey_artbox_3.jpg" class="p2" />
-      <img src="/images/monkey_artbox_4.jpg" class="p2" />
-      <img src="/images/monkey_artbox_5.jpg" class="p2" />
-      <img src="/images/monkey_artbox_6.jpg" class="p2" />
+    <div class="col sm-col-12 md-col-6 px2">
+      <img src="/images/monkey_artbox_3.jpg" class="mb2" />
+      <img src="/images/monkey_artbox_4.jpg" class="mb2" />
+      <img src="/images/monkey_artbox_5.jpg" class="mb2" />
+      <img src="/images/monkey_artbox_6.jpg" class="mb2" />
     </div>
   </div>
 </div>
