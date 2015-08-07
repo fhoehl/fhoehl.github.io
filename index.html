@@ -3,23 +3,23 @@ layout: default
 title: fhoehl
 ---
 
-<div class="row">
+<div class="row flex flex-wrap flex-justify flex-center">
   {% for post in site.posts %}
-  <div class="col-sm-4">
+  <div class="flex flex-center m3">
     <div class="thumbnail" style="border: none; padding: 0;">
         {% if post.link %}
         <a href="{{ post.link }}">
-          <img src="{{ post.image }}" class="img-responsive" alt="">
+          <img src="{{ post.image }}" width="400" height="400" class="img-responsive" alt="">
         </a>
-        <div class="caption" style="text-align: center;">
-          <h4><a href="{{ post.link }}">{{ post.title }}</a></h4>
+        <div class="caption">
+          <h3><a href="{{ post.link }}">{{ post.title }}</a></h3>
         </div>
         {% else %}
         <a href="{{ post.url }}">
-          <img src="{{ post.image }}" class="img-responsive" alt="">
+          <img src="{{ post.image }}" width="400" height="400" class="img-responsive" alt="">
         </a>
-        <div class="caption" style="text-align: center;">
-          <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+        <div class="caption">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
         </div>
         {% endif %}
     </div>
@@ -27,22 +27,3 @@ title: fhoehl
   {% endfor %}
 </div>
 
-<!--
-<div class="row">
-  {% for post in site.posts %}
-  <div class="col-md-4">
-    {% if post.link %}
-    <h4><a href="{{ post.link }}">{{ post.title }}</a></h4>
-    <a href="{{ post.link }}">
-      <img src="{{ post.image }}" class="img-responsive" alt="">
-    </a>
-    {% else %}
-    <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-    <a href="{{ post.url }}">
-      <img src="{{ post.image }}" class="img-responsive" alt="">
-    </a>
-    {% endif %}
-  </div>
-  {% endfor %}
-</div>
--->

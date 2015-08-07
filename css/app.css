@@ -1,6 +1,28 @@
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  color: #333;
+  background-color: #FAFAFA;
+  text-rendering: optimizeLegibility;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  40% {
+    transform: rotateZ(-4deg);
+  }
+  60% {
+    transform: rotateZ(2deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.monkey:hover {
+  animation: rotate 1s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  outline: 1px solid transparent;
 }
 
 iframe {

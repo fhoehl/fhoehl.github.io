@@ -6,8 +6,9 @@
         margin: 0;
         padding: 0;
         background-color: #3F3965;
-        font-family: "Helvetica Neue",HelveticaNeue,Arial,sans-serif;
+        font-family: "Helvetica Neue",Helvetica,sans-serif;
         text-align: center;
+        overflow: hidden;
       }
       canvas { width: 100%; height: 100%; }
       #start { position: absolute; top: 50%; color: white; width: 100%; }
@@ -20,6 +21,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://mohayonao.github.io/timbre.js/timbre.dev.js"></script>
     <script src="dist/all.js"></script>
-    <div id="start"><a id="startBtn"href="#">Start</a><p>Needs WebGL and Web Audio enabled</p></div>
+    <div id="start"><a id="startBtn" style="cursor: pointer;">Start</a><p>Needs WebGL and Web Audio enabled</p></div>
   </body>
 </html>
