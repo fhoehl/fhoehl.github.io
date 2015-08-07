@@ -16,7 +16,7 @@ The machine is made up of a network of connected nodes and a notion of time. The
 
 At the beginning the network is empty and starts to be filled with agents. After a while the number of agents exiting and entering the network stabilizes; it's in a steady state. The number of agents on each node will converge to a stable value.
 
-The degree of convergence of the network is used to express the mood of the machine. The more this value is equal to 1, the more the network is stabilizing: the machine is *bored*. The more this value is equal to 0, the machine is *happy* and *active*. This influences the sound made by the machine.`
+The degree of convergence of the network is used to express the mood of the machine. The more this value is equal to 1, the more the network is stabilizing: the machine is *bored*. The more this value is equal to 0, the machine is *happy* and *active*. This influences the sound made by the machine.
 
 # On making music
 
