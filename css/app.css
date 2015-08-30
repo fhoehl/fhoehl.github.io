@@ -4,6 +4,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.container-post {
+  max-width: 50em;
+}
+
 @keyframes rotate {
   0% {
     transform: rotateZ(0deg);
