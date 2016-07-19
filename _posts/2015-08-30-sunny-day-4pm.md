@@ -59,7 +59,9 @@ colors. These subsets evolve over generations.
 There we go, the program knows my intention and how to realize it: creating a
 visual work of art.
 
-<a class="twitter-timeline" data-width="400" data-height="800"
-data-theme="light" href="https://twitter.com/sunnyday4pm">Tweets by
-sunnyday4pm</a>
+<div class="center py4">
+  <a class="twitter-timeline" data-width="400" data-height="800"
+  data-theme="light" href="https://twitter.com/sunnyday4pm">Tweets by sunnyday4pm</a>
+</div>
+
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
