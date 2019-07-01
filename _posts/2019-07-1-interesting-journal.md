@@ -9,13 +9,11 @@ Veneer made with corn husk by [Fernando Laposse](https://www.fernandolaposse.com
 
 [Notpla](https://www.notpla.com/products/): an edible and biodegradable material combining seaweed and plants. I ate a small pouch containing an elderflower cordial. The material has no taste.
 
-	"At the time of Kyoto kai, Kawase said this to me: 'Showing something natural, in its native state, is not art. Artifice piled on artifice, giving you the illusion of the natural — that's art. If you are going to draw people into your dream, then you must make it completely convincing. If the dream is not perfect, then it will feel unnatural. Only the most perfect dreams approaches reality."
+> "At the time of Kyoto kai, Kawase said this to me: 'Showing something natural, in its native state, is not art. Artifice piled on artifice, giving you the illusion of the natural — that's art. If you are going to draw people into your dream, then you must make it completely convincing. If the dream is not perfect, then it will feel unnatural. Only the most perfect dreams approaches reality."
+  Lost Japan. Alex Kerr.
 
-	Lost Japan. Alex Kerr.
-
-	Shirasu Masako has in her study a tanzaku calligraphy plaque which reads, “Dogs and horses are difficult; demons and fascinating things are easy”. Ordinary things are difficult to depict or master.
-
-	Lost Japan. Alex Kerr.
+> Shirasu Masako has in her study a tanzaku calligraphy plaque which reads, “Dogs and horses are difficult; demons and fascinating things are easy”. Ordinary things are difficult to depict or master.
+  Lost Japan. Alex Kerr.
 
 The fallacy of personal validation or [Barnum effect](https://en.wikipedia.org/wiki/Barnum_effect): we tend to accept generalised descriptions as being representative of our individual personalities. That could explain why self-help book are widely popular.
 
