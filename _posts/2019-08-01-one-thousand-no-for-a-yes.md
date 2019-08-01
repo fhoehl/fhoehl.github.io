@@ -1,3 +1,9 @@
+---
+layout: post
+title: Thousand no’s for every yes
+image: /images/simulation.png
+---
+
 # Thousand no’s for every yes
 
 When I moved to London I was on the hunt for a shared accommodation.  Browsing ads and meeting future flat mates is time consuming. Lacking of the later, I thought: “What is the minimum number of flat share I should get in touch with in order to get at least one option that suits me?”. I got in contact with 8 and ended up with a few choices. Only one was perfect. Luck or engineered luck? How did I pick the number 8?
