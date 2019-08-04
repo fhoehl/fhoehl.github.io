@@ -29,6 +29,7 @@ Each bar in this graph gives the probability of getting exactly N heads after to
 This is called a [cumulative distribution function](https://en.wikipedia.org/wiki/Cumulative_distribution_function). Cumulative distribution functions (CDF) are interesting because they let you ask questions like: “What is the probability of getting at least two heads after 8 trials?”, “What is the probability of getting at most 5 heads after 8 trials?”…
 
 CDF(0) = probability of getting no heads after 8 trials.
+
 CDF(1) = probability of getting at most one head after 8 trials.
 
 The probability of getting at least one head after N trials is the opposite of getting no heads after 8 trials. You can therefore write:
