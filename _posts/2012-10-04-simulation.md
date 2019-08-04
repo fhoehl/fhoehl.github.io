@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Simple simulation of birth and death 
+title: Simple simulation of birth and death
 image: /images/simulation.png
 ---
 
