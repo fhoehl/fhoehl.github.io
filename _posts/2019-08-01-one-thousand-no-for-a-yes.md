@@ -1,14 +1,12 @@
 ---
 layout: post
 title: Thousand no’s for every yes
-image: /images/simulation.png
+image: /images/nonono.jpg
 ---
-
-# Thousand no’s for every yes
 
 When I moved to London I was on the hunt for a shared accommodation.  Browsing ads and meeting future flat mates is time consuming. Lacking of the later, I thought: “What is the minimum number of flat share I should get in touch with in order to get at least one option that suits me?”. I got in contact with 8 and ended up with a few choices. Only one was perfect. Luck or engineered luck? How did I pick the number 8?
 
-After meeting your future flat mates one doesn’t know what happens in their mind. Do they like me? Do I like them? Their decision and mine is biased. It is very much like flipping an unfair coin. Let’s consider that a head is a positive outcome: I get the room. When getting in touch with 8 accommodations, you flip an unfair coin 8 times. I might get zero, one or multiple heads.
+After meeting your future flat mates one doesn’t know what happens in their mind. Do they like me? Do I like them? Their decision and mine is biased. It is very much like flipping an unfair coin. Let’s consider that a head is a positive outcome: I get the room. When getting in touch with 8 accommodations, you flip an unfair coin 8 times. I might get zero, one or multiple heads.
 
 Let’s do a simulation with a fair coin first.
 
@@ -18,13 +16,13 @@ Flip 8 times a fair coin and record how many heads you get. Repeat this operatio
 
 The data is normalised: the values are divided by the total number of flips. That’s why the vertical axis goes up to 1.0. Notice how the bell is symmetric and centred on the middle. This is because the coin is fair: we should likely get the same quantity of heads and tails. This kind of histogram is called a probability distribution.
 
-Let’s do the same experiment with a biased coin. Let’s say the probability of drawing a head is 0.4. In order words there is a 40% chance of drawing a head. In our flat hunting scenario that means that we feel quite confident of being picked but we keep a margin for bias. 
+Let’s do the same experiment with a biased coin. In our flat hunting scenario I feel quite confident of being a good flat mate and I have good references. I feel that 40% chance of having success is a good estimation of my luck. Let’s say the probability of drawing a head is 0.4.
 
-If we do the same experiment with this biased coin we get a skewed bell! The bell is centred around 3.
+If we do the same experiment with this biased coin we get a skewed bell! The bell is centred around 3 which if 40% of 8 (8 being the number of trials).
 
 ![Figure 2](/media/one-thousand-no-for-a-yes/Figure_2.png)
 
-Each bar in this graph gives the probability of getting exactly N heads after tossing a coin 8 times. Now if we accumulate the values we see this curve.
+Each bar in this graph gives the probability of getting exactly N heads after tossing a coin 8 times. Now if we gradually add each bar on top of each other we see this curve.
 
 ![Figure 3](/media/one-thousand-no-for-a-yes/Figure_3.png)
 
@@ -73,6 +71,8 @@ By using this method and combining it with the Secretary Problem you get a great
 - How many dates should I go on in order to find a partner?
 
 The trickiest part is finding the right probability p of success. In this case I picked 0.4 because it’s lower than a fair dice and that I was confident about it. You can note that the lower the probability of success the more work you have to put in.
+
+<iframe src="/media/many-no-for-a-yes/dist/index.html" width="100%" height="800px" style="margin: 40px auto 40px auto;"></iframe>
 
 ### Recommended readings
 
