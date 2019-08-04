@@ -61,7 +61,7 @@ input[type=range]::-moz-range-thumb {
   border: 22px solid #913228;
   min-height: 500px;
   padding: 2em;
-  width: 600px;
+  width: auto;
 }
 
 .header {
