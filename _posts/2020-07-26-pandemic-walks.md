@@ -13,3 +13,5 @@ delicate aroma produced by the leaves. These spectacles are short and disappear
 within days or weeks. Checking up on nature has become a favourite recreation.
 You can hear me say: "Today let's go and check the sunflowers; they must be
 ready.".
+
+![Tree](/images/pandemic_walks.jpg)
