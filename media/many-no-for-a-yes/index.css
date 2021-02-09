@@ -52,7 +52,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .wrap {
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 .calculator {
@@ -62,43 +62,6 @@ input[type=range]::-moz-range-thumb {
   min-height: 500px;
   padding: 2em;
   width: auto;
-}
-
-.header {
-  height: 60px;
-  position: relative;
-}
-
-.head {
-  left: 50%;
-  margin-left: -100px;
-  position: absolute;
-  top: -140px;
-}
-
-
-
-
-.sans-serif {
-  font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
-}
-
-.serif {
-  font-family: georgia, times, serif;
-}
-
-
-.ticks {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px;
-}
-
-.unselectable {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .tick {
@@ -125,6 +88,51 @@ input[type=range]::-moz-range-thumb {
   background: #9f7462;
   display: inline-block;
   top: -20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .calculator {
+    border: 12px solid #913228;
+    padding: 0.5em;
+  }
+
+  .tick {
+    font-size: 12px;
+  }
+}
+
+.header {
+  height: 60px;
+  position: relative;
+}
+
+.head {
+  left: 50%;
+  margin-left: -100px;
+  position: absolute;
+  top: -140px;
+}
+
+.sans-serif {
+  font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+}
+
+.serif {
+  font-family: georgia, times, serif;
+}
+
+
+.ticks {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .title {
