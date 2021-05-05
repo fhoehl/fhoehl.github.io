@@ -9,6 +9,10 @@ favourites:
 [Let’s start with the list of mathematical symbols by introduction
 date](https://en.wikipedia.org/wiki/Table_of_mathematical_symbols_by_introduction_date).
 
+[List of oldest
+companies](https://en.wikipedia.org/wiki/List_of_oldest_companies). How come
+most of the ones founded before 1300 are from Japan?
+
 It’s fascinating to think that symbols taken for granted had to be created at
 some point.
 
