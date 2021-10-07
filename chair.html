@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Chair</title>
+    <meta name="author" content="fhoehl">
+    <meta property="og:title" content="The Chair">
+    <meta property="og:description" content="An HTML poem">
+    <meta property="og:type" content="website">
+    <style type="text/css">
+      body {
+        background: #efefef;
+        color: #2a2a2a;
+        font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      :root {
+        --chair-size: 200px;
+      }
+
+      .main {
+        height: 10000px;
+        margin: 60px;
+        position: relative;
+      }
+
+      h1 {
+        font-size: 100px;
+        font-weight: 900;
+        line-height: 100px;
+        margin: 0;
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 300;
+        position: absolute;
+      }
+
+      p:nth-of-type(1) {
+        top: 25%;
+      }
+
+      p:nth-of-type(2) {
+        top: 50%;
+      }
+
+      p:nth-of-type(3) {
+        top: 98%;
+      }
+
+      .chair {
+        float: right;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: calc(1.5 * var(--chair-size));
+      }
+
+      .chair__back {
+        background: hsl(0deg 0% 5%);
+        height: var(--chair-size);
+        left: calc(var(--chair-size) / 2);
+        position: relative;
+        width: var(--chair-size);
+      }
+
+      .chair__seat {
+        background: linear-gradient(0deg, hsl(0deg 0% 20%) 20%, hsl(0deg 0% 0%) 100%);
+        display: block;
+        height: calc(var(--chair-size) / 2);
+        left: calc(var(--chair-size) / 2);
+        position: relative;
+        transform-origin: 0 0;
+        transform: skewX(135deg);
+        width: var(--chair-size);
+        z-index: 1;
+      }
+
+      .chair__legs {
+        height: calc(100% - 1.5 * var(--chair-size));
+        left: calc(var(--chair-size) / 2);
+        min-height: var(--chair-size);
+        position: relative;
+        width: var(--chair-size);
+      }
+
+      .chair__leg {
+        height: 100%;
+        position: absolute;
+        width: 16px;
+        background: hsl(0deg 0% 20%);
+        display: block;
+      }
+
+      .chair__leg--front-right {
+        left: -50%;
+      }
+
+      .chair__leg--front-left {
+        right: 50%;
+      }
+
+      .chair__leg--back-right {
+        background: hsl(0deg 0% 5%);
+        top: calc(var(--chair-size) / -2);
+      }
+
+      .chair__leg--back-left {
+        background: hsl(0deg 0% 5%);
+        right: 0;
+        top: calc(var(--chair-size) / -2);
+      }
+
+      @media (max-width: 768px) {
+        .main {
+          margin: 20px;
+        }
+
+        h1 {
+          font-size: 80px;
+        }
+
+        .chair {
+          top: calc(var(--chair-size) * 1.25);
+        }
+
+        p {
+          background: #efefef;
+          padding: 16px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Chair</h1>
+      <div class="chair">
+        <div class="chair__back"></div>
+        <div class="chair__seat"></div>
+        <div class="chair__legs">
+          <div class="chair__leg chair__leg--front-right"></div>
+          <div class="chair__leg chair__leg--front-left"></div>
+          <div class="chair__leg chair__leg--back-right"></div>
+          <div class="chair__leg chair__leg--back-left"></div>
+        </div>
+      </div>
+      <p>is a very tall chair</p>
+      <p>with long legs</p>
+      <p>that lift you in the air</p>
+    </div>
+  </body>
+</html>
