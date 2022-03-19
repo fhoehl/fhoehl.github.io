@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>An impermanent dot</title>
+    <meta name="author" content="fhoehl">
+    <meta property="og:title" content="An impermanent dot">
+    <meta property="og:description" content="An HTML poem">
+    <meta property="og:type" content="website">
+    <style>
+      :root {
+        --backgroundColor: #e7e4d3;
+        --eyeColor: #001233;
+      }
+
+      body {
+        background: var(--backgroundColor);
+        margin: 0;
+        padding: 0;
+      }
+
+      svg {
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      svg .eye__outer {
+        stroke: var(--eyeColor);
+      }
+
+      svg .eye__inner {
+        fill: var(--eyeColor);
+        stroke: var(--eyeColor);
+      }
+    </style>
+  </head>
+  <body>
+    <svg class="eye" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid">
+      <g transform="">
+        <path class="eye__outer" d="M 0,0 C 128,160 256,160 384,0 C 256,-160 128,-160 0,0Z" fill="None" stroke="black" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+        <circle class="eye__inner" cx="0" cy="0" r="50"/>
+      </g>
+    </svg>
+    <script>
+      const G = 32
+      const CANVAS_HEIGHT = window.innerHeight * 1.5
+      const CANVAS_WIDTH = window.innerWidth * 1.5
+      const CONTROL_X = 4 * G
+      const CONTROL_Y = 5 * G
+      const DURATION = 800
+      const EYE_WIDTH = 12 * G
+      const PUPIL_WIDTH = 2.5 * G
+      const SVG_HEIGHT = 1000
+      const SVG_WIDTH = 1000
+
+      const group = document.querySelector("svg.eye g")
+      const eyeOuterPath = document.querySelector("svg.eye .eye__outer")
+      const eyeInner = document.querySelector("svg.eye .eye__inner")
+
+      eyeInner.setAttribute("cx", EYE_WIDTH / 2)
+      eyeInner.setAttribute("r", PUPIL_WIDTH)
+      group.setAttribute("transform", `translate(${(SVG_WIDTH - EYE_WIDTH) / 2}, ${SVG_HEIGHT / 2})`)
+
+      function interpolate(t, from, to, duration) {
+        return from + (to - from) * ease(Math.min(t, duration) / duration)
+      }
+
+      function ease(x) {
+        return x === 0 ? 0 : Math.pow(2, 10 * x - 10)
+      }
+
+      function setPath(c_x, c_y) {
+        const path = `M 0,0 C ${c_x},${c_y} ${EYE_WIDTH - c_x},${c_y} ${EYE_WIDTH},0 C ${EYE_WIDTH - c_x},${-c_y} ${c_x},${-c_y} 0,0Z`
+        eyeOuterPath.setAttribute("d", path)
+      }
+
+      let startTime
+      let to_X = 400
+      let to_Y = 400
+      let C_X = CONTROL_X
+      let C_Y = CONTROL_Y
+
+      function frame(timestamp) {
+        if (startTime === undefined) {
+          startTime = timestamp
+        }
+
+        const elapsed = timestamp - startTime;
+        const C_Xt = interpolate(elapsed, C_X, to_X, DURATION)
+        const C_Yt = interpolate(elapsed, C_Y, to_Y, DURATION)
+
+        setPath(C_Xt, C_Yt)
+
+        if (Math.abs(C_Xt - to_X) < 0.01) {
+          C_X = C_Xt
+          C_Y = C_Yt
+          if (Math.random() > 0.8) {
+            to_X = Math.random() * CANVAS_WIDTH
+            to_Y = Math.random() * CANVAS_HEIGHT
+          } else {
+            to_X = CONTROL_X
+            to_Y = CONTROL_Y
+          }
+          startTime = undefined
+        }
+
+        window.requestAnimationFrame(frame)
+      }
+
+      setPath(CONTROL_X, CONTROL_Y)
+
+      setTimeout(() => {
+        window.requestAnimationFrame(frame)
+        console.info("an impermanent dot")
+      }, 1200)
+    </script>
+  </body>
+</html>
